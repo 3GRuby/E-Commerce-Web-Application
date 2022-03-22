@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/mydb?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">1234</property>
+    <mapping resource="pojo/Log.hbm.xml"/>
+    <mapping resource="pojo/Cart.hbm.xml"/>
+    <mapping resource="pojo/SiteChange.hbm.xml"/>
+    <mapping resource="pojo/ProductBrand.hbm.xml"/>
+    <mapping resource="pojo/UserReg.hbm.xml"/>
+    <mapping resource="pojo/StockIn.hbm.xml"/>
+    <mapping resource="pojo/CartHasProduct.hbm.xml"/>
+    <mapping resource="pojo/UserType.hbm.xml"/>
+    <mapping resource="pojo/ProductType.hbm.xml"/>
+    <mapping resource="pojo/Privelage.hbm.xml"/>
+    <mapping resource="pojo/WishList.hbm.xml"/>
+    <mapping resource="pojo/DileverCharge.hbm.xml"/>
+    <mapping resource="pojo/Product.hbm.xml"/>
+    <mapping resource="pojo/Shippingdetails.hbm.xml"/>
+    <mapping resource="pojo/Checkout.hbm.xml"/>
+    <mapping resource="pojo/Volume.hbm.xml"/>
+    <mapping resource="pojo/UserTypeHasPrivelage.hbm.xml"/>
+    <mapping resource="pojo/Model.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 14, 2016 8:17:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="pojo.UserReg" table="user_reg" catalog="mydb">
+        <id name="idUserReg" type="java.lang.Integer">
+            <column name="id_user_reg" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="userType" class="pojo.UserType" fetch="select">
+            <column name="user_type_id_user_type" not-null="true" />
+        </many-to-one>
+        <property name="FName" type="string">
+            <column name="f_name" length="45" />
+        </property>
+        <property name="LName" type="string">
+            <column name="l_name" length="45" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="45" />
+        </property>
+        <property name="address1" type="string">
+            <column name="address_1" length="45" />
+        </property>
+        <property name="address2" type="string">
+            <column name="address_2" length="45" />
+        </property>
+        <property name="address3" type="string">
+            <column name="address_3" length="45" />
+        </property>
+        <property name="uname" type="string">
+            <column name="uname" length="45" />
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="45" />
+        </property>
+        <property name="password1" type="string">
+            <column name="password_1" length="45" />
+        </property>
+        <property name="password2" type="string">
+            <column name="password_2" length="45" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="45" />
+        </property>
+        <set name="siteChanges" inverse="true">
+            <key>
+                <column name="user_reg_id_user_reg" not-null="true" />
+            </key>
+            <one-to-many class="pojo.SiteChange" />
+        </set>
+        <set name="logs" inverse="true">
+            <key>
+                <column name="user_reg_id_user_reg" not-null="true" />
+            </key>
+            <one-to-many class="pojo.Log" />
+        </set>
+        <set name="wishLists" inverse="true">
+            <key>
+                <column name="user_reg_id_user_reg" not-null="true" />
+            </key>
+            <one-to-many class="pojo.WishList" />
+        </set>
+        <set name="carts" inverse="true">
+            <key>
+                <column name="user_reg_id_user_reg" not-null="true" />
+            </key>
+            <one-to-many class="pojo.Cart" />
+        </set>
+    </class>
+</hibernate-mapping>

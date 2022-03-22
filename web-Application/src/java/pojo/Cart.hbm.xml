@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 14, 2016 8:17:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="pojo.Cart" table="cart" catalog="mydb">
+        <id name="idCart" type="java.lang.Integer">
+            <column name="id_cart" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="userReg" class="pojo.UserReg" fetch="select">
+            <column name="user_reg_id_user_reg" not-null="true" />
+        </many-to-one>
+        <property name="totalProduct" type="java.lang.Integer">
+            <column name="total_product" />
+        </property>
+        <property name="totalAmout" type="java.lang.Double">
+            <column name="total_amout" precision="22" scale="0" />
+        </property>
+        <property name="shippingAddress" type="string">
+            <column name="shipping_address" length="45" />
+        </property>
+        <set name="cartHasProducts" inverse="true">
+            <key>
+                <column name="cart_id_cart" not-null="true" />
+            </key>
+            <one-to-many class="pojo.CartHasProduct" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 14, 2016 8:17:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="pojo.SiteChange" table="site_change" catalog="mydb">
+        <id name="idSiteChange" type="java.lang.Integer">
+            <column name="id_site_change" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="userReg" class="pojo.UserReg" fetch="select">
+            <column name="user_reg_id_user_reg" not-null="true" />
+        </many-to-one>
+        <property name="page" type="string">
+            <column name="page" length="45" />
+        </property>
+        <property name="content" type="string">
+            <column name="content" length="45" />
+        </property>
+        <property name="place" type="string">
+            <column name="place" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

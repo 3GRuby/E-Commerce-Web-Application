@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 14, 2016 8:17:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="pojo.Log" table="log" catalog="mydb">
+        <id name="idlog" type="java.lang.Integer">
+            <column name="idlog" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="userReg" class="pojo.UserReg" fetch="select">
+            <column name="user_reg_id_user_reg" not-null="true" />
+        </many-to-one>
+        <property name="date" type="timestamp">
+            <column name="Date" length="19" not-null="true" />
+        </property>
+        <property name="userRole" type="string">
+            <column name="user_role" length="45" />
+        </property>
+        <property name="time" type="timestamp">
+            <column name="time" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

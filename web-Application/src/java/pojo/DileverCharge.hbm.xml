@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 14, 2016 8:17:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="pojo.DileverCharge" table="dilever_charge" catalog="mydb">
+        <id name="did" type="java.lang.Integer">
+            <column name="Did" />
+            <generator class="identity" />
+        </id>
+        <property name="district" type="string">
+            <column name="District" length="45" not-null="true" />
+        </property>
+        <property name="charge" type="string">
+            <column name="Charge" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

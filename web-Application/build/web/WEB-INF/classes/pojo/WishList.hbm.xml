@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 14, 2016 8:17:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="pojo.WishList" table="wish_list" catalog="mydb">
+        <id name="idWishList" type="int">
+            <column name="id_wish_list" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="userReg" class="pojo.UserReg" fetch="select">
+            <column name="user_reg_id_user_reg" not-null="true" />
+        </many-to-one>
+        <many-to-one name="product" class="pojo.Product" fetch="select">
+            <column name="product_id_product" not-null="true" />
+        </many-to-one>
+        <property name="date" type="timestamp">
+            <column name="date" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="mydb"/>
+  <table-filter match-name="shippingdetails"/>
+  <table-filter match-name="user_type"/>
+  <table-filter match-name="product_type"/>
+  <table-filter match-name="product_brand"/>
+  <table-filter match-name="wish_list"/>
+  <table-filter match-name="log"/>
+  <table-filter match-name="cart_has_product"/>
+  <table-filter match-name="user_reg"/>
+  <table-filter match-name="checkout"/>
+  <table-filter match-name="volume"/>
+  <table-filter match-name="site_change"/>
+  <table-filter match-name="privelage"/>
+  <table-filter match-name="dilever_charge"/>
+  <table-filter match-name="model"/>
+  <table-filter match-name="cart"/>
+  <table-filter match-name="user_type_has_privelage"/>
+  <table-filter match-name="stock_in"/>
+  <table-filter match-name="product"/>
+</hibernate-reverse-engineering>

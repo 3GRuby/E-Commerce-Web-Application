@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 14, 2016 8:17:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="pojo.Privelage" table="privelage" catalog="mydb">
+        <id name="idPrivelage" type="java.lang.Integer">
+            <column name="id_privelage" />
+            <generator class="identity" />
+        </id>
+        <property name="page" type="string">
+            <column name="page" length="45" />
+        </property>
+        <property name="capabilt" type="string">
+            <column name="capabilt" length="45" />
+        </property>
+        <set name="userTypeHasPrivelages" inverse="true">
+            <key>
+                <column name="privelage_id_privelage" not-null="true" />
+            </key>
+            <one-to-many class="pojo.UserTypeHasPrivelage" />
+        </set>
+    </class>
+</hibernate-mapping>

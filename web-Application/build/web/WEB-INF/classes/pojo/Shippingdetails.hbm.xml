@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 14, 2016 8:17:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="pojo.Shippingdetails" table="shippingdetails" catalog="mydb">
+        <id name="idshippingDetails" type="java.lang.Integer">
+            <column name="idshippingDetails" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cartHasProduct" class="pojo.CartHasProduct" fetch="select">
+            <column name="cart_has_product_id" not-null="true" />
+        </many-to-one>
+        <property name="address1" type="string">
+            <column name="address1" length="45" />
+        </property>
+        <property name="address2" type="string">
+            <column name="address2" length="45" />
+        </property>
+        <property name="address3" type="string">
+            <column name="address3" length="45" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="45" />
+        </property>
+        <property name="province" type="string">
+            <column name="province" length="45" />
+        </property>
+        <property name="country" type="string">
+            <column name="country" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

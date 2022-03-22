@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 14, 2016 8:17:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="pojo.Checkout" table="checkout" catalog="mydb">
+        <id name="idCheckout" type="java.lang.Integer">
+            <column name="id_checkout" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cartHasProduct" class="pojo.CartHasProduct" fetch="select">
+            <column name="cart_has_product_id" not-null="true" />
+        </many-to-one>
+        <property name="date" type="timestamp">
+            <column name="date" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

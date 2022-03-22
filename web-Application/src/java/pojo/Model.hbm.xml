@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 14, 2016 8:17:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="pojo.Model" table="model" catalog="mydb">
+        <id name="idmodel" type="java.lang.Integer">
+            <column name="idmodel" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="productBrand" class="pojo.ProductBrand" fetch="select">
+            <column name="product_brand_id_brand" not-null="true" />
+        </many-to-one>
+        <property name="modelName" type="string">
+            <column name="modelName" length="45" not-null="true" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="45" />
+        </property>
+        <set name="volumes" inverse="true">
+            <key>
+                <column name="model_idmodel" not-null="true" />
+            </key>
+            <one-to-many class="pojo.Volume" />
+        </set>
+        <set name="products" inverse="true">
+            <key>
+                <column name="model_idmodel" not-null="true" />
+            </key>
+            <one-to-many class="pojo.Product" />
+        </set>
+    </class>
+</hibernate-mapping>
