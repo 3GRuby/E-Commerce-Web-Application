@@ -20,8 +20,8 @@ import javax.mail.internet.MimeMessage;
 public class sendMail {
 
     public static void sendMail(String c,String mail) {
-       final String username = "gayan1991madusanka@gmail.com";// ube gmail  eka
-		final String password = "ruby7&11";// gmail pass eka
+       final String username = "admin@gmail.com";// ube gmail  eka
+		final String password = "admin1234";// gmail pass eka
 
 		Properties props = new Properties();
 		props.put("mail.smtp.auth", "true");
